@@ -14,16 +14,29 @@ log='
   Copyright (c) 2020 "Tokyo Gakugei University - Hazeyamalab"
 '
 
+# アスキーアートの表示
 echo "$log"
 
-echo "[1] installing xcode-select..."
-which xcode-select >/dev/null 2>&1 || xcode-select --install
+# Command Line Developper Toolsのインストール
+if which xcode-select >/dev/null 2>&1; then
+  echo "[1/4] xcode-select is already installed! skipping this step."
+else
+  echo "[1/4] installing xcode-select..."
+  xcode-select --install
+fi
 
-echo "[2] installing homebrew..."
-which brew >/dev/null 2>&1 || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# Homebrewのインストール
+if which brew >/dev/null 2>&1; then
+  echo "[2/4] homebrew is already installed! skipping this step."
+else
+  echo "[2/4] installing homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+fi
 
-echo "[3] download Brewfile..."
+# GitHubからBrewfileをダウンロード (とりあえずHOMEディレクトリに配置する．)
+echo "[3/4] download Brewfile..."
 cd "$HOME" && curl -fsSL https://raw.githubusercontent.com/HazeyamaLab/setup/master/macOS/Brewfile > ./Brewfile
 
-echo "[4] installing package..."
-brew bundle
+# 取得したBrewfileをもとにパッケージをインストール
+echo "[4/4] installing package..."
+cd "$HOME" && brew bundle
