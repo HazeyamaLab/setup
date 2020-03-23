@@ -1,5 +1,8 @@
 # Welcom to Hazeyama Lab !
 
+研究室で使用するソフトウェアを一括でインストールするスクリプトファイルです．  
+本リポジトリはCloneすることなく実行可能です．  
+
 ## for Windows
 
 PowerShellを管理者権限で実行し，以下のコマンドを実行します．
@@ -12,7 +15,7 @@ PowerShellを管理者権限で実行し，以下のコマンドを実行しま�
 
 ```ps
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
-Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/HazeyamaLab/setup/master/windows/install.ps1')
+iwr -useb raw.githubusercontent.com/HazeyamaLab/setup/master/windows/install.ps1 | iex
 ```
 
 ## for macOS
