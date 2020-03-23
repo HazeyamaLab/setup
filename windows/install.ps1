@@ -21,8 +21,8 @@ function Init-Scoop {
   scoop bucket add java
 }
 
-# Insatll-Package: cui関連のツールをインストールする
-function Install-Package {
+# Insatll-Package-By-Scoop: cui関連のツールをインストールする
+function Install-Package-By-Scoop {
   scoop install sudo
   scoop install curl
   scoop install wget
@@ -33,7 +33,11 @@ function Install-Package {
   scoop install adopt8-hotspot
   scoop install adopt11-hotspot
   scoop install adopt14-hotspot
-  scoop install mysql
+}
+
+# Insatll-Package-By-Choco: cui関連のツールをインストールする (MySQLはScoopだとうまくいかなかったのでChocoに切り替え)
+function Install-Package-By-Choco {
+  choco install -y mysql
 }
 
 # Install-GUI-Application-By-Scoop: scoopでGUIツールをインストールする
@@ -95,7 +99,8 @@ if (gcm git -ea SilentlyContinue) {
 if (gcm scoop -and gcm choco -ea SilentlyContinue) {
   Write-Host "[4/4] installing package..."
   Init-Scoop
-  Install-Package
+  Install-Package-By-Scoop
+  Install-Package-By-Choco
   Install-GUI-Application-By-Scoop
   Install-GUI-Application-By-Choco
 } else {
