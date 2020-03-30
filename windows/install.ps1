@@ -26,6 +26,7 @@ function Install-Package-By-Scoop {
   scoop install sudo
   scoop install curl
   scoop install wget
+  scoop install direnv
   scoop install gibo
   scoop install nvm yarn
   scoop install python
@@ -42,6 +43,7 @@ function Install-Package-By-Choco {
 
 # Install-GUI-Application-By-Scoop: scoopでGUIツールをインストールする
 function Install-GUI-Application-By-Scoop {
+  scoop install keypirinha
   scoop install slack
   scoop install skype
   scoop install vscode
