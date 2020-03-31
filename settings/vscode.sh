@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# command
+# curl -sf https://raw.githubusercontent.com/HazeyamaLab/setup/master/settings/vscode.sh | bash -s
+
 extensions=(
   MS-CEINTL.vscode-language-pack-ja
   dbaeumer.vscode-eslint
