@@ -1,5 +1,7 @@
 # Welcom to Hazeyama Lab !
 
+<img width="637" alt="スクリーンショット 2020-03-31 19 07 49" src="https://user-images.githubusercontent.com/27722351/78014568-13e66e00-7383-11ea-9363-d27679e2c3fb.png">
+
 研究室で使用するソフトウェアを一括でインストールするスクリプトファイルです．  
 本リポジトリはCloneすることなく実行可能です．  
 
