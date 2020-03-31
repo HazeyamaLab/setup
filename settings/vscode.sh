@@ -23,11 +23,11 @@ extensions=(
   yzhang.markdown-all-in-one
 )
 
-if which brew >/dev/null 2>&1; then
-  echo "installing Visual Studio Code "
+if which code >/dev/null 2>&1; then
+  echo "[main] installing Visual Studio Code extensions..."
   for extension in "${extensions[@]}"; do
     code --install-extension $extension
   done
 else
-  echo "code commnad not found."
+  echo "code commnad not found. please check https://github.com/HazeyamaLab/setup/issues/2"
 fi
