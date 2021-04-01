@@ -45,7 +45,6 @@ function Install-Package-By-Choco {
 function Install-GUI-Application-By-Scoop {
   scoop install keypirinha
   scoop install slack
-  scoop install skype
   scoop install vscode
   scoop install mysql-workbench
   scoop install tableplus
