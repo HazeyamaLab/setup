@@ -37,6 +37,11 @@ fi
 echo "[3/4] download Brewfile..."
 cd "$HOME" && curl -fsSL https://raw.githubusercontent.com/HazeyamaLab/setup/master/macOS/Brewfile > ./Brewfile
 
+# M1チップではない場合にインストールするソフトウェア
+if [ ! "$(uname -m)" = "arm64" ]; then
+  cd "$HOME" && echo 'cask "virtualbox"\ncask "vagrant"' >> ./Brewfile
+fi
+
 # 取得したBrewfileをもとにパッケージをインストール
 echo "[4/4] installing package..."
-cd "$HOME" && brew bundle
+cd "$HOME" && brew bundle && rm ./Brewfile

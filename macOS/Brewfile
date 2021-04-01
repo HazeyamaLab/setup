@@ -25,6 +25,4 @@ cask "karabiner-elements"
 cask "mysqlworkbench"
 cask "homebrew/cask-versions/sequel-pro-nightly"
 cask "docker"
-cask "virtualbox"
-cask "vagrant"
 mas "Xcode", id: 497799835
