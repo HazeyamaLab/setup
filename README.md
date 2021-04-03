@@ -64,7 +64,6 @@ curl -sf https://raw.githubusercontent.com/HazeyamaLab/setup/master/macOS/instal
   - sequel pro (macOS)
 - チャット/コミュニケーションツール
   - slack
-  - skype
 - Webブラウザ
   - Google-chrome
 - エディタ
@@ -75,8 +74,6 @@ curl -sf https://raw.githubusercontent.com/HazeyamaLab/setup/master/macOS/instal
   - docker (macOS)
 - 環境変数関連
   - direnv
-- 構成管理ツール
-  - ansible (macOS)
 - ターミナル
   - iTerm2 (macOS)
   - Git Bash (windows)

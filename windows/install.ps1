@@ -45,7 +45,6 @@ function Install-Package-By-Choco {
 function Install-GUI-Application-By-Scoop {
   scoop install keypirinha
   scoop install slack
-  scoop install skype
   scoop install vscode
   scoop install mysql-workbench
   scoop install tableplus
@@ -77,6 +76,8 @@ function Print-Note {
 if (gcm scoop -ea SilentlyContinue) {
   Write-Host "[1/4] scoop is already installed! skipping this step."
 } else {
+  $env:SCOOP='C:\Scoop'
+  [environment]::setEnvironmentVariable('SCOOP', $env:SCOOP,'User')
   Write-Host "[1/4] installing scoop..."
   Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
 }
