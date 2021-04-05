@@ -39,7 +39,7 @@ cd "$HOME" && curl -fsSL https://raw.githubusercontent.com/HazeyamaLab/setup/mas
 
 # M1チップではない場合にインストールするソフトウェア
 if [ ! "$(uname -m)" = "arm64" ]; then
-  cd "$HOME" && echo 'cask "virtualbox"\ncask "vagrant"' >> ./Brewfile
+  cd "$HOME" && printf 'cask "virtualbox"\ncask "vagrant"\n' >> ./Brewfile
 fi
 
 # 取得したBrewfileをもとにパッケージをインストール
