@@ -42,6 +42,11 @@ if [ ! "$(uname -m)" = "arm64" ]; then
   cd "$HOME" && printf 'cask "virtualbox"\ncask "vagrant"\n' >> ./Brewfile
 fi
 
+# CI環境ではXCodeのインストールをスキップする
+if [ ! "$CI" ]; then
+  cd "$HOME" && printf 'mas "Xcode", id: 497799835' >> ./Brewfile
+fi
+
 # 取得したBrewfileをもとにパッケージをインストール
 echo "[4/4] installing package..."
 cd "$HOME" && brew bundle && rm ./Brewfile
