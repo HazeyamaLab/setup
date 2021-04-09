@@ -52,7 +52,6 @@ curl -sf https://raw.githubusercontent.com/HazeyamaLab/setup/master/macOS/instal
   - tig
 - プログラミング言語関連
   - python
-  - go
   - java
 - node関連
   - nodebrew (macOS)

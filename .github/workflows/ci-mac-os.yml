@@ -1,0 +1,29 @@
+name: macOS
+
+on:
+  push:
+    paths:
+      - 'macOS/**'
+      - '.github/workflows/ci-mac-os.yml'
+
+jobs:
+  macos-test:
+    runs-on: macos-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./macOS
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install package
+      run: |
+        brew install shellcheck
+    - name: Lint macOS/install.sh
+      run: shellcheck --exclude SC2016,SC1004 install.sh
+
+    - name: Run macOS/install.sh
+      run: ./install.sh
+      env:
+        ENV: CI
