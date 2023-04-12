@@ -79,7 +79,7 @@ if (gcm scoop -ea SilentlyContinue) {
   $env:SCOOP='C:\Scoop'
   [environment]::setEnvironmentVariable('SCOOP', $env:SCOOP,'User')
   Write-Host "[1/4] installing scoop..."
-  Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+  iex "& {$(irm get.scoop.sh)} -RunAsAdmin"
 }
 
 # chocolateyのインストール
