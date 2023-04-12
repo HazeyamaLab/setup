@@ -1,0 +1,29 @@
+name: windows
+
+on:
+  push:
+    paths:
+      - 'windows/install.ps1'
+      - '.github/workflows/ci-windows.yml'
+
+jobs:
+  windows-test:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: ./windows
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install package
+      run: choco install psscriptanalyzer
+
+    - name: Lint windows/install.ps1
+      run: Invoke-ScriptAnalyzer -Path ./install.ps1 -ExcludeRule PSAvoidUsingInvokeExpression,PSUseBOMForUnicodeEncodedFile,PSAvoidTrailingWhitespace
+
+    - name: Run windows/install.ps1
+      run: (iwr -useb https://raw.githubusercontent.com/HazeyamaLab/setup/master/windows/install.ps1).content | iex
+      env:
+        ENV: CI

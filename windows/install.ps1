@@ -30,7 +30,6 @@ function Install-Package-By-Scoop {
   scoop install gibo
   scoop install nvm yarn
   scoop install python
-  scoop install go
   scoop install adopt8-hotspot
   scoop install adopt11-hotspot
   scoop install adopt14-hotspot
