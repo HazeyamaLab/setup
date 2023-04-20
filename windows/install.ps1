@@ -31,9 +31,9 @@ function Install-Package-By-Scoop {
   scoop install nvm yarn
   scoop install python
   scoop install go
-  scoop install adopt8-hotspot
-  scoop install adopt11-hotspot
-  scoop install adopt14-hotspot
+  scoop install temurin8-jdk
+  scoop install temurin11-jdk
+  scoop install temurin17-jdk
 }
 
 # Insatll-Package-By-Choco: cui関連のツールをインストールする (MySQLはScoopだとうまくいかなかったのでChocoに切り替え)
